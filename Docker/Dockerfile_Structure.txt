@@ -1,0 +1,33 @@
+######################################
+Docker File Structure Overview
+######################################
+
+======================================
+ Sample Dockerfile: Basic Node.js App
+======================================
+
+# Step 1: Base image
+FROM node:18-alpine
+
+# Step 2: Environment variables (optional but useful)
+ENV PORT=3000
+
+# Step 3: Create working directory
+WORKDIR /app
+
+# Step 4: Copy app files into the container
+COPY . .
+
+# Step 5: Install dependencies
+RUN npm install
+
+# Step 6: Expose the app port to Docker
+EXPOSE 3000
+
+# Step 7: Default command to run the app
+CMD ["node", "server.js"]
+
+
+======================================
+ Sample Dockerfile: Basic Node.js App
+======================================
