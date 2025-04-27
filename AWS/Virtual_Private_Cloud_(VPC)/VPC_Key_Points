@@ -1,0 +1,49 @@
+==========================================
+VPC KEY POINTS TO REMEMBER
+==========================================
+
+=> VPC is Regional. We can create maximum 5 VPC's per region.
+
+=> AWS by default provides a Default VPC for every region.
+
+=> Basic VPC Setup Order:
+		1. Create VPC
+		2. Internet Gateway
+		3. Public and Private Subnets
+		4. NAT Gateway
+		5. Route Tables
+
+=> Internet Gateway provides internet access to VPC resources.
+
+=> Public Subnet -> Which is exposed to the Internet.
+				 ->	Public Subnet traffic is routed to Internet Gateway. 
+
+=> NAT Gateway (Network Address Translator)
+
+=> Private Subnet -> Which is not exposed to the Internet.
+				  -> Private Subnet traffic is routed to NAT Gateway.
+				  -> NAT Gateway then routes traffic to the Internet Gateway.
+
+=> NAT Gateway should be placed in a Public Subnet.
+	WHY? -> Because NAT Gateways needs direct access to Internet to forward traffic
+			from Private Subnet to the internet.
+
+=> NAT Gateway translates the Private IP to its own Public IP (Elastic IP) before sending traffic to the internet.
+
+-----------
+ROUTE TABLE 
+-----------
+-> A route table is a set of rules, or "routes," that determine how network traffic from a subnet is directed to a specific destination, such as another subnet, an Internet Gateway, or a virtual private gateway.
+
+=> Route Table Controls outbound traffic (where traffic goes).
+
+=> Security Group + NACL	Controls inbound traffic (who is allowed to come in).
+
+=> Public Route Table is associated to a Public Subnet.
+
+=> Private Route Table is associated to a Private Subnet.
+
+-----------------------------
+BASTION SERVER/ JUMP SERVER)
+-----------------------------
+
