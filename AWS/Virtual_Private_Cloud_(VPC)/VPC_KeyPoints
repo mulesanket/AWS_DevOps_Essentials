@@ -47,3 +47,25 @@ ROUTE TABLE
 BASTION SERVER/ JUMP SERVER)
 -----------------------------
 
+=> One Subnet can be associated in One Availability Zone at the same time.
+
+=> One Availability Zone can have Multiple Subnets.
+
+=> Subnet Mask decides how many IP Addresses you can get inside Subnet.
+
+FORMULA -> [ 2^32-n ]
+----------------------
+for example ->   Given: 192.168.1.0/24
+				 Formula: 2^32-n
+				 Solution: 2^32-24 = 2^8 = 256
+				 Answer: You will get total 256 IP Addresses within that Subnet. 
+	
+	Important: Every Subnet has 5 IP Adresses are reserved.
+			   1) .0 -> Network Related
+			   2) .1 -> Routing Purpose
+			   3) .2 -> DNS Purpose
+			   4) .3 -> Future Purpose
+			   5) .255 -> Broadcasting Purpose
+          =>  Above IP Addresses are reserved and you cannot assign.
+
+  
